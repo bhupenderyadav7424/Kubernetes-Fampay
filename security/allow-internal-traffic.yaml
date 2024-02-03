@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-hodor-traffic
+spec:
+  podSelector:
+    matchLabels:
+      app: hodor
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: bran

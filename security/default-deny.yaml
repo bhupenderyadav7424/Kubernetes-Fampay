@@ -1,0 +1,9 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-bran-traffic
+spec:
+  podSelector:
+    matchLabels:
+      app: bran
+  ingress: []
